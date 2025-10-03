@@ -94,7 +94,7 @@
   <div id="greetings">
     <h1 style="color: #e91e63;">С Днём Рождения, наш любимый куратор!</h1>
     <div id="wishes-container"></div>
-    <audio autoplay>
+    <audio id="music">
       <source src="music.mp3" type="audio/mpeg">
     </audio>
   </div>
@@ -145,6 +145,9 @@
     function showGreeting() {
       const greetings = document.getElementById("greetings");
       greetings.style.display = "block";
+
+      const music = document.getElementById("music");
+      music.play().catch(err => console.log("Автовоспроизведение заблокировано:", err));
 
       const container = document.getElementById("wishes-container");
 
